@@ -1019,7 +1019,7 @@
             .off('focus.slick blur.slick')
             .on(
                 'focus.slick',
-                '*', 
+                '*',
                 function(event) {
                     var $sf = $(this);
 
@@ -1034,7 +1034,7 @@
                 }
             ).on(
                 'blur.slick',
-                '*', 
+                '*',
                 function(event) {
                     var $sf = $(this);
 
@@ -1346,15 +1346,6 @@
                     'id': 'slick-slide' + _.instanceUid + i,
                     'tabindex': -1
                 });
-
-                if (slideControlIndex !== -1) {
-                   var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex
-                   if ($('#' + ariaButtonControl).length) {
-                     $(this).attr({
-                         'aria-describedby': ariaButtonControl
-                     });
-                   }
-                }
             });
 
             _.$dots.attr('role', 'tablist').find('li').each(function(i) {
@@ -1365,12 +1356,10 @@
                 });
 
                 $(this).find('button').first().attr({
-                    'role': 'tab',
                     'id': 'slick-slide-control' + _.instanceUid + i,
                     'aria-controls': 'slick-slide' + _.instanceUid + mappedSlideIndex,
-                    'aria-label': (i + 1) + ' of ' + numDotGroups,
-                    'aria-selected': null,
-                    'tabindex': '-1'
+                    'aria-hidden': true,
+                    'aria-selected': null
                 });
 
             }).eq(_.currentSlide).find('button').attr({
