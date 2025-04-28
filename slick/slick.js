@@ -1348,7 +1348,7 @@
                 });
             });
 
-            _.$dots.attr('role', 'presentation').attr('aria-hidden', true).find('li').each(function(i) {
+            _.$dots.find('li').each(function(i) {
                 var mappedSlideIndex = tabControlIndexes[i];
 
                 $(this).attr({
